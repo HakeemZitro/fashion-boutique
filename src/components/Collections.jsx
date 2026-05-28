@@ -1,6 +1,38 @@
+import { useState, useEffect, useRef } from 'react';
 import styles from './Collections.module.css';
 
 function Collections({ label, title, collections }) {
+  const [visibleCards, setVisibleCards] = useState([]);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observers = [];
+
+    collections.forEach((_, index) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              setVisibleCards(prev => [...prev, index]);
+            }, index * 150);
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.2 }
+      );
+
+      if (cardRefs.current[index]) {
+        observer.observe(cardRefs.current[index]);
+      }
+
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach(obs => obs.disconnect());
+    };
+  }, [collections.length]);
+
   return (
     <section className={styles.collections}>
       <div className={styles.collections__header}>
@@ -9,8 +41,13 @@ function Collections({ label, title, collections }) {
       </div>
 
       <div className={styles.collections__grid}>
-        {collections.map((collection) => (
-          <article key={collection.id} className={styles['collection-card']}>
+        {collections.map((collection, index) => (
+          <article
+            key={collection.id}
+            ref={el => cardRefs.current[index] = el}
+            className={`${styles['collection-card']} ${visibleCards.includes(index) ? styles['is-visible'] : ''}`}
+            style={{ transitionDelay: `${index * 150}ms` }}
+          >
             <div className={styles['collection-card__image-container']}>
               <img
                 src={collection.image}

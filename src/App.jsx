@@ -9,13 +9,6 @@ import Footer from './components/Footer';
 import './styles/variables.css';
 
 const data = {
-  designer: {
-    name: "Isabella Voss",
-    title: "Fashion Designer & Creative Director",
-    tagline: "Where Art Meets Elegance",
-    description: "Redefining fashion through artistic expression, creating garments that tell stories and evoke emotions. Each piece is a canvas where fabric becomes art.",
-    signature: "Isabella Voss"
-  },
   nav: {
     logoText: "IV",
     links: [

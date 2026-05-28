@@ -1,8 +1,34 @@
+import { useState, useEffect, useRef } from 'react';
 import styles from './About.module.css';
 
 function About({ image, label, title, accentText, description, signature }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className={styles.about} id="about">
+    <section ref={sectionRef} className={`${styles.about} ${isVisible ? styles['is-visible'] : ''}`} id="about">
       <div className={styles['about__image-container']}>
         <img src={image} alt="Designer portrait" className={styles.about__image} />
         <div className={styles['about__image-frame']} />

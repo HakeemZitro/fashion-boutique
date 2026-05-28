@@ -1,0 +1,50 @@
+.animated-section {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fadeUp {
+  transform: translateY(40px);
+}
+
+.fadeDown {
+  transform: translateY(-40px);
+}
+
+.fadeLeft {
+  transform: translateX(40px);
+}
+
+.fadeRight {
+  transform: translateX(-40px);
+}
+
+.fadeScale {
+  transform: scale(0.9);
+}
+
+.slideUp {
+  transform: translateY(100%);
+}
+
+.slideDown {
+  transform: translateY(-100%);
+}
+
+.zoomIn {
+  transform: scale(0.5);
+}
+
+.is-visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+.delay-700 { transition-delay: 700ms; }
+.delay-800 { transition-delay: 800ms; }

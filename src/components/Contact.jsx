@@ -1,12 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './Contact.module.css';
 
 function Contact({ label, title, text, email }) {
+  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +45,7 @@ function Contact({ label, title, text, email }) {
   };
 
   return (
-    <section className={styles.contact} id="contact">
+    <section ref={sectionRef} className={`${styles.contact} ${isVisible ? styles['is-visible'] : ''}`} id="contact">
       <div className={styles['contact__container']}>
         <div className={styles.contact__info}>
           <p className={styles['contact__label']}>{label}</p>
