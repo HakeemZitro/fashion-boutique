@@ -1,0 +1,89 @@
+.about {
+  padding: 8rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about__image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.about__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(20%);
+  transition: filter 0.5s ease;
+}
+
+.about__image-container:hover .about__image {
+  filter: grayscale(0%);
+}
+
+.about__image-frame {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid var(--color-accent);
+  pointer-events: none;
+}
+
+.about__content {
+  padding-right: 2rem;
+}
+
+.about__label {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+}
+
+.about__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.about__title-accent {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.about__text {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.about__signature {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--color-accent);
+  opacity: 0.7;
+}
+
+@media (max-width: 1024px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 6rem 2rem;
+  }
+
+  .about__content {
+    padding-right: 0;
+  }
+}

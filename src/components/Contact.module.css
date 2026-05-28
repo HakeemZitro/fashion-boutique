@@ -1,0 +1,122 @@
+.contact {
+  padding: 8rem 4rem;
+  background: var(--color-bg);
+}
+
+.contact__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+}
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact__label {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.contact__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.contact__text {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.contact__email {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact__email:hover {
+  color: var(--color-accent);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact__input,
+.contact__textarea {
+  width: 100%;
+  padding: 1rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  transition: border-color 0.3s ease;
+}
+
+.contact__input::placeholder,
+.contact__textarea::placeholder {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.contact__textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.contact__button {
+  align-self: flex-start;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.contact__button:hover {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
+
+@media (max-width: 1024px) {
+  .contact__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 6rem 2rem;
+  }
+}
