@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './Hero.module.css';
+import styles from '../../blocks/Hero.module.css';
 
 function Hero({ subtitle, title, tagline, images }) {
   const [activeSlide, setActiveSlide] = useState(0);

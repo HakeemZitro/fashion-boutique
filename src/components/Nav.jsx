@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './Nav.module.css';
+import styles from '../../blocks/Nav.module.css';
 
 function Nav({ logoText, links, social }) {
   const [scrolled, setScrolled] = useState(false);

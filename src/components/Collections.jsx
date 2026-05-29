@@ -1,40 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
-import styles from './Collections.module.css';
+import styles from '../../blocks/Collections.module.css';
 
-function Collections({ label, title, collections }) {
-  const [visibleCards, setVisibleCards] = useState([]);
-  const cardRefs = useRef([]);
-
-  useEffect(() => {
-    const observers = [];
-
-    collections.forEach((_, index) => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              setVisibleCards(prev => [...prev, index]);
-            }, index * 150);
-            observer.unobserve(entry.target);
-          }
-        },
-        { threshold: 0.2 }
-      );
-
-      if (cardRefs.current[index]) {
-        observer.observe(cardRefs.current[index]);
-      }
-
-      observers.push(observer);
-    });
-
-    return () => {
-      observers.forEach(obs => obs.disconnect());
-    };
-  }, [collections.length]);
-
+function Collections({ label, title, collections, className = '' }) {
   return (
-    <section className={styles.collections}>
+    <section className={`${styles.collections} ${className}`}>
       <div className={styles.collections__header}>
         <p className={styles.collections__label}>{label}</p>
         <h2 className={styles.collections__title}>{title}</h2>
@@ -44,9 +12,8 @@ function Collections({ label, title, collections }) {
         {collections.map((collection, index) => (
           <article
             key={collection.id}
-            ref={el => cardRefs.current[index] = el}
-            className={`${styles['collection-card']} ${visibleCards.includes(index) ? styles['is-visible'] : ''}`}
-            style={{ transitionDelay: `${index * 150}ms` }}
+            className={`${styles['collection-card']} fadeUp`}
+            style={{ '--index': index }}
           >
             <div className={styles['collection-card__image-container']}>
               <img

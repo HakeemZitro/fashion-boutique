@@ -1,41 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
-import styles from './Gallery.module.css';
+import { useState } from 'react';
+import styles from '../../blocks/Gallery.module.css';
 
-function Gallery({ label, title, items }) {
-  const [visibleItems, setVisibleItems] = useState([]);
+function Gallery({ label, title, items, className = '' }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const itemRefs = useRef([]);
-
-  useEffect(() => {
-    const observers = [];
-
-    items.forEach((item, index) => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              setVisibleItems(prev => [...prev, index]);
-            }, index * 100);
-            observer.unobserve(entry.target);
-          }
-        },
-        { threshold: 0.2 }
-      );
-
-      if (itemRefs.current[index]) {
-        observer.observe(itemRefs.current[index]);
-      }
-
-      observers.push(observer);
-    });
-
-    return () => {
-      observers.forEach(obs => obs.disconnect());
-    };
-  }, [items.length]);
 
   return (
-    <section className={styles.gallery}>
+    <section className={`${styles.gallery} ${className}`}>
       <div className={styles.gallery__header}>
         <p className={styles.gallery__label}>{label}</p>
         <h2 className={styles.gallery__title}>{title}</h2>
@@ -45,9 +15,8 @@ function Gallery({ label, title, items }) {
         {items.map((item, index) => (
           <div
             key={item.id}
-            ref={el => itemRefs.current[index] = el}
-            className={`${styles.gallery__item} ${visibleItems.includes(index) ? styles['is-visible'] : ''}`}
-            style={{ transitionDelay: `${index * 100}ms` }}
+            className={`${styles.gallery__item} fadeUp`}
+            style={{ '--index': index }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >

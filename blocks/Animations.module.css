@@ -1,0 +1,128 @@
+.fadeUp {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUpAnim both;
+  animation-timeline: view();
+  animation-range: entry 25% entry 100%;
+}
+
+.fadeDown {
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: fadeDownAnim both;
+  animation-timeline: view();
+  animation-range: entry 25% entry 100%;
+}
+
+.fadeLeft {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: fadeLeftAnim both;
+  animation-timeline: view();
+  animation-range: entry 25% entry 100%;
+}
+
+.fadeRight {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: fadeRightAnim both;
+  animation-timeline: view();
+  animation-range: entry 25% entry 100%;
+}
+
+.fadeScale {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeScaleAnim both;
+  animation-timeline: view();
+  animation-range: entry 25% entry 100%;
+}
+
+.slideUp {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: slideUpAnim both;
+  animation-timeline: view();
+  animation-range: entry 25% entry 100%;
+}
+
+.slideDown {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: slideDownAnim both;
+  animation-timeline: view();
+  animation-range: entry 25% entry 100%;
+}
+
+.zoomIn {
+  opacity: 0;
+  transform: scale(0.5);
+  animation: zoomInAnim both;
+  animation-timeline: view();
+  animation-range: entry 25% entry 100%;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+@keyframes fadeUpAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDownAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeftAnim {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRightAnim {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeScaleAnim {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUpAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomInAnim {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

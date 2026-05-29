@@ -1,40 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
-import styles from './About.module.css';
+import styles from '../../blocks/About.module.css';
 
-function About({ image, label, title, accentText, description, signature }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
+function About({ image, label, title, accentText, description, signature, className = '' }) {
   return (
-    <section ref={sectionRef} className={`${styles.about} ${isVisible ? styles['is-visible'] : ''}`} id="about">
-      <div className={styles['about__image-container']}>
+    <section className={`${styles.about} ${className}`} id="about">
+      <div className={`${styles['about__image-container']} fadeRight`}>
         <img src={image} alt="Designer portrait" className={styles.about__image} />
         <div className={styles['about__image-frame']} />
       </div>
 
-      <div className={styles.about__content}>
+      <div className={`${styles.about__content} fadeLeft`}>
         <p className={styles.about__label}>{label}</p>
         <h2 className={styles.about__title}>
           {title} <span className={styles['about__title-accent']}>{accentText}</span>

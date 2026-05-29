@@ -1,4 +1,4 @@
-import styles from './Footer.module.css';
+import styles from '../../blocks/Footer.module.css';
 
 function Footer({ logo, description, navLinks, socialLinks, copyright, legalLinks }) {
   return (
