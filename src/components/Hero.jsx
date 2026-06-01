@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from '../../blocks/Hero.module.css';
+import UnicornScene from "unicornstudio-react";
+
 
 function Hero({ subtitle, title, tagline, images }) {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -21,7 +23,12 @@ function Hero({ subtitle, title, tagline, images }) {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.hero__background}>
+      <UnicornScene className={styles.hero__background}
+      projectId="WpjkczJM7f4n8zpebqJg"
+      scale={1}
+      dpi={1.5}
+    />
+      {/*<div className={styles.hero__background}>
         {images.map((img, index) => (
           <div
             key={index}
@@ -34,7 +41,7 @@ function Hero({ subtitle, title, tagline, images }) {
             />
           </div>
         ))}
-      </div>
+      </div>*/}
 
       <div className={styles.hero__overlay} />
 

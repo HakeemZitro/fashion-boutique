@@ -61,7 +61,7 @@
 
 .contact__input,
 .contact__textarea {
-  width: 100%;
+  max-width: 100%;
   padding: 1rem 0;
   background: transparent;
   border: none;

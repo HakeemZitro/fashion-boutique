@@ -1,14 +1,22 @@
-.fadeUp {
+.fadeUpCollection {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(min(5vh, 48px));
   animation: fadeUpAnim both;
   animation-timeline: view();
-  animation-range: entry 25% entry 100%;
+  animation-range: entry calc(var(--index) * 30%) entry 100%;
+}
+
+.fadeUpGallery {
+  opacity: 0;
+  transform: translateY(min(5vh, 48px));
+  animation: fadeUpAnim both;
+  animation-timeline: view();
+  animation-range: entry calc(var(--index) * 20%) cover 40%;
 }
 
 .fadeDown {
   opacity: 0;
-  transform: translateY(-40px);
+  transform: translateY(calc(-1 * min(5vh, 48px)));
   animation: fadeDownAnim both;
   animation-timeline: view();
   animation-range: entry 25% entry 100%;
@@ -16,7 +24,7 @@
 
 .fadeLeft {
   opacity: 0;
-  transform: translateX(40px);
+  transform: translateX(min(4.5vw, 48px));
   animation: fadeLeftAnim both;
   animation-timeline: view();
   animation-range: entry 25% entry 100%;
@@ -24,7 +32,7 @@
 
 .fadeRight {
   opacity: 0;
-  transform: translateX(-40px);
+  transform: translateX(calc(-1 * min(4.5vw, 48px)));
   animation: fadeRightAnim both;
   animation-timeline: view();
   animation-range: entry 25% entry 100%;
@@ -62,14 +70,30 @@
   animation-range: entry 25% entry 100%;
 }
 
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
-.delay-700 { animation-delay: 700ms; }
-.delay-800 { animation-delay: 800ms; }
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
+.delay-600 {
+  animation-delay: 600ms;
+}
+.delay-700 {
+  animation-delay: 700ms;
+}
+.delay-800 {
+  animation-delay: 800ms;
+}
 
 @keyframes fadeUpAnim {
   to {

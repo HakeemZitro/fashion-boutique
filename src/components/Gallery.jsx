@@ -5,7 +5,7 @@ function Gallery({ label, title, items, className = '' }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section className={`${styles.gallery} ${className}`}>
+    <section className={`${styles.gallery} ${className}`} id="gallery">
       <div className={styles.gallery__header}>
         <p className={styles.gallery__label}>{label}</p>
         <h2 className={styles.gallery__title}>{title}</h2>
@@ -15,7 +15,7 @@ function Gallery({ label, title, items, className = '' }) {
         {items.map((item, index) => (
           <div
             key={item.id}
-            className={`${styles.gallery__item} fadeUp`}
+            className={`${styles.gallery__item} fadeUpGallery`}
             style={{ '--index': index }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}

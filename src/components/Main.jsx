@@ -24,7 +24,7 @@ const data = {
   },
   hero: {
     subtitle: "Fashion Designer",
-    title: "Isabella Voss",
+    title: "Ximena Castillo",
     tagline: "Where Art Meets Elegance",
     images: [
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80",
@@ -40,7 +40,7 @@ const data = {
     accentText: "Elegance",
     description:
       "With over a decade of experience in haute couture, Isabella Voss has established herself as a visionary in the fashion world. Her work bridges the gap between classical artistry and contemporary minimalism, creating pieces that transcend seasons and trends.",
-    signature: "Isabella Voss",
+    signature: "Ximena Castillo",
   },
   collections: {
     label: "Collections",
@@ -111,7 +111,7 @@ const data = {
   philosophy: {
     quote:
       "Fashion is not just about clothing. It's about the story you tell when you walk into a room, the confidence that comes from knowing who you are.",
-    signature: "— Isabella Voss",
+    signature: "— Ximena Castillo",
   },
   contact: {
     label: "Get in Touch",
@@ -120,7 +120,7 @@ const data = {
     email: "studio@isabellavoss.com",
   },
   footer: {
-    logo: "Isabella Voss",
+    logo: "Ximena Castillo",
     description:
       "Creating wearable art that transcends fashion norms. Each piece tells a story, each collection is a journey through beauty and expression.",
     navLinks: [
@@ -131,11 +131,11 @@ const data = {
       { label: "Press", href: "#press" },
     ],
     socialLinks: [
-      { label: "Instagram", href: "https://instagram.com/isabellavoss" },
-      { label: "TikTok", href: "https://tiktok.com/@isabellavoss" },
-      { label: "Pinterest", href: "https://pinterest.com/isabellavoss" },
+      { label: "Instagram", href: "https://instagram.com/ximenacastillo" },
+      { label: "TikTok", href: "https://tiktok.com/@ximenacastillo" },
+      { label: "Pinterest", href: "https://pinterest.com/ximenacastillo" },
     ],
-    copyright: "© 2026 Isabella Voss. All rights reserved.",
+    copyright: "© 2026 Ximena Castillo. All rights reserved.",
     legalLinks: [
       { label: "Privacy", href: "#privacy" },
       { label: "Terms", href: "#terms" },

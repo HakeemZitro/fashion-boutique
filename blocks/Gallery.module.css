@@ -1,6 +1,7 @@
 .gallery {
   padding: 8rem 4rem;
   background: var(--color-bg);
+  min-height: 100vh;
 }
 
 .gallery__header {
@@ -94,6 +95,10 @@
 }
 
 @media (max-width: 1024px) {
+  .gallery {
+    height: fit-content;
+  }
+
   .gallery__grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;

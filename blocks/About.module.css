@@ -6,6 +6,7 @@
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
+  min-height: 100vh;
 }
 
 .about__image-container {
@@ -81,6 +82,7 @@
     grid-template-columns: 1fr;
     gap: 3rem;
     padding: 6rem 2rem;
+    height: auto;
   }
 
   .about__content {

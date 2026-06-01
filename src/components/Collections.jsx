@@ -2,7 +2,7 @@ import styles from '../../blocks/Collections.module.css';
 
 function Collections({ label, title, collections, className = '' }) {
   return (
-    <section className={`${styles.collections} ${className}`}>
+    <section className={`${styles.collections} ${className}`} id="collections">
       <div className={styles.collections__header}>
         <p className={styles.collections__label}>{label}</p>
         <h2 className={styles.collections__title}>{title}</h2>
@@ -12,7 +12,7 @@ function Collections({ label, title, collections, className = '' }) {
         {collections.map((collection, index) => (
           <article
             key={collection.id}
-            className={`${styles['collection-card']} fadeUp`}
+            className={`${styles['collection-card']} fadeUpCollection`}
             style={{ '--index': index }}
           >
             <div className={styles['collection-card__image-container']}>

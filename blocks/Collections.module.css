@@ -1,6 +1,7 @@
 .collections {
   padding: 8rem 0;
   background: var(--color-dark);
+  min-height: 100vh;
 }
 
 .collections__header {
@@ -117,6 +118,7 @@
   .collections__grid {
     grid-template-columns: repeat(2, 1fr);
     padding: 0 2rem;
+    height: auto;
   }
 }
 
